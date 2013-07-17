@@ -41,64 +41,6 @@ var World = {
 	EAST:  [ 1,  0],
 	
 	Weapons: {
-		'fists': {
-			verb: 'punch',
-			type: 'unarmed',
-			damage: 1,
-			cooldown: 2
-		},
-		'bone spear': {
-			verb: 'stab',
-			type: 'melee',
-			damage: 2,
-			cooldown: 2
-		},
-		'iron sword': {
-			verb: 'swing',
-			type: 'melee',
-			damage: 4,
-			cooldown: 2
-		},
-		'steel sword': {
-			verb: 'slash',
-			type: 'melee',
-			damage: 6,
-			cooldown: 2
-		},
-		'bayonet': {
-			verb: 'thrust',
-			type: 'melee',
-			damage: 8,
-			cooldown: 2
-		},
-		'rifle': {
-			verb: 'shoot',
-			type: 'ranged',
-			damage: 5,
-			cooldown: 1,
-			cost: { 'bullets': 1 }
-		},
-		'laser rifle': {
-			verb: 'blast',
-			type: 'ranged',
-			damage: 8,
-			cooldown: 1,
-			cost: { 'energy cell': 1 }
-		},
-		'grenade': {
-			verb: 'lob',
-			type: 'ranged',
-			damage: 15,
-			cooldown: 5,
-			cost: { 'grenade': 1 }
-		},
-		'bolas': {
-			verb: 'tangle',
-			type: 'ranged',
-			damage: 'stun',
-			cooldown: 15,
-			cost: { 'bolas': 1 }
-		}
 	},
 	
 	name: 'World',

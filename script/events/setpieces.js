@@ -111,24 +111,6 @@ Events.Setpieces = {
 			'a1': {
 				combat: true,
 				enemy: 'beast',
-				char: 'B',
-				damage: 1,
-				hit: 0.8,
-				attackDelay: 1,
-				health: 5,
-				notification: 'a startled beast defends its home',
-				loot: {
-					'fur': {
-						min: 1,
-						max: 10,
-						chance: 1
-					},
-					'teeth': {
-						min: 1,
-						max: 5,
-						chance: 0.8
-					}
-				},
 				buttons: {
 					'continue': {
 						text: 'continue',
@@ -249,24 +231,6 @@ Events.Setpieces = {
 			'b3': {
 				combat: true,
 				enemy: 'beast',
-				char: 'B',
-				damage: 1,
-				hit: 0.8,
-				attackDelay: 1,
-				health: 5,
-				notification: 'a startled beast defends its home',
-				loot: {
-					'fur': {
-						min: 1,
-						max: 3,
-						chance: 1
-					},
-					'teeth': {
-						min: 1,
-						max: 2,
-						chance: 0.8
-					}
-				},
 				buttons: {
 					'continue': {
 						text: 'continue',
@@ -281,24 +245,6 @@ Events.Setpieces = {
 			'b4': {
 				combat: true,
 				enemy: 'cave lizard',
-				char: 'L',
-				damage: 3,
-				hit: 0.8,
-				attackDelay: 2,
-				health: 6,
-				notification: 'a cave lizard attacks',
-				loot: {
-					'scales': {
-						min: 1,
-						max: 3,
-						chance: 1
-					},
-					'teeth': {
-						min: 1,
-						max: 2,
-						chance: 0.8
-					}
-				},
 				buttons: {
 					'continue': {
 						text: 'continue',
@@ -312,25 +258,7 @@ Events.Setpieces = {
 			},
 			'c1': {
 				combat: true,
-				enemy: 'beast',
-				char: 'B',
-				damage: 3,
-				hit: 0.8,
-				attackDelay: 2,
-				health: 10,
-				notification: 'a large beast charges out of the dark',
-				loot: {
-					'fur': {
-						min: 1,
-						max: 3,
-						chance: 1
-					},
-					'teeth': {
-						min: 1,
-						max: 3,
-						chance: 1
-					}
-				},
+				enemy: 'large beast',
 				buttons: {
 					'continue': {
 						text: 'continue',
@@ -344,25 +272,7 @@ Events.Setpieces = {
 			},
 			'c2': {
 				combat: true,
-				enemy: 'lizard',
-				char: 'L',
-				damage: 4,
-				hit: 0.8,
-				attackDelay: 2,
-				health: 10,
-				notification: 'a giant lizard shambles forward',
-				loot: {
-					'scales': {
-						min: 1,
-						max: 3,
-						chance: 1
-					},
-					'teeth': {
-						min: 1,
-						max: 3,
-						chance: 1
-					}
-				},
+				enemy: 'giant lizard',
 				buttons: {
 					'continue': {
 						text: 'continue',
@@ -541,29 +451,6 @@ Events.Setpieces = {
 			'a2': {
 				combat: true,
 				enemy: 'thug',
-				char: 'T',
-				damage: 4,
-  				hit: 0.8,
-  				attackDelay: 2,
-  				health: 30,
-  				loot: {
-  					'cloth': {
-  						min: 5,
-  						max: 10,
-  						chance: 0.8
-  					},
-  					'leather': {
-  						min: 5,
-  						max: 10,
-  						chance: 0.8
-  					},
-					'cured meat': {
-						min: 1,
-						max: 5,
-						chance: 0.5
-					}
-  				},
-  				notification: 'ambushed on the street.',
 				buttons: {
 					'continue': {
 						text: 'continue',
@@ -631,30 +518,7 @@ Events.Setpieces = {
 			},
 			'b2': {
 				combat: true,
-				enemy: 'scavenger',
-				char: 'S',
-				damage: 4,
-  				hit: 0.8,
-  				attackDelay: 2,
-  				health: 30,
-  				loot: {
-  					'cloth': {
-  						min: 5,
-  						max: 10,
-  						chance: 0.8
-  					},
-  					'leather': {
-  						min: 5,
-  						max: 10,
-  						chance: 0.8
-  					},
-  					'cured meat': {
-  						min: 1,
-  						max: 5,
-  						chance: 0.5
-  					}
-  				},
-  				notification: 'a scavenger waits just inside the door.',
+				enemy: 'hidden scavenger',
 				buttons: {
 					'continue': {
 						text: 'continue',
@@ -669,24 +533,6 @@ Events.Setpieces = {
 			'b3': {
 				combat: true,
 				enemy: 'beast',
-				char: 'B',
-				damage: 3,
-  				hit: 0.8,
-  				attackDelay: 1,
-  				health: 25,
-  				loot: {
-  					'teeth': {
-  						min: 1,
-  						max: 5,
-  						chance: 1
-  					},
-  					'fur': {
-  						min: 5,
-  						max: 10,
-  						chance: 1
-  					}
-  				},
-  				notification: 'a beast stands alone in an overgrown park.',
 				buttons: {
 					'continue': {
 						text: 'continue',
@@ -739,29 +585,6 @@ Events.Setpieces = {
 			'b5': {
 				combat: true,
 				enemy: 'madman',
-				char: 'M',
-				damage: 6,
-  				hit: 0.3,
-  				attackDelay: 1,
-  				health: 10,
-  				loot: {
-  					'cloth': {
-  						min: 2,
-  						max: 4,
-  						chance: 0.3
-  					},
-  					'cured meat': {
-  						min: 1,
-  						max: 5,
-  						chance: 0.9
-  					},
-  					'medicine': {
-  						min: 1,
-  						max: 2,
-  						chance: 0.4
-  					}
-  				},
-  				notification: 'a madman attacks, screeching.',
 				buttons: {
 					'continue': {
 						text: 'continue',
@@ -776,29 +599,6 @@ Events.Setpieces = {
 			'c1': {
 				combat: true,
 				enemy: 'thug',
-				char: 'T',
-				damage: 4,
-  				hit: 0.8,
-  				attackDelay: 2,
-  				health: 30,
-  				loot: {
-  					'cloth': {
-  						min: 5,
-  						max: 10,
-  						chance: 0.8
-  					},
-  					'leather': {
-  						min: 5,
-  						max: 10,
-  						chance: 0.8
-  					},
-					'cured meat': {
-						min: 1,
-						max: 5,
-						chance: 0.5
-					}
-  				},
-  				notification: 'a thug moves out of the shadows.',
 				buttons: {
 					'continue': {
 						text: 'continue',
@@ -812,25 +612,7 @@ Events.Setpieces = {
 			},
 			'c2': {
 				combat: true,
-				enemy: 'beast',
-				char: 'B',
-				damage: 3,
-  				hit: 0.8,
-  				attackDelay: 1,
-  				health: 25,
-  				loot: {
-  					'teeth': {
-  						min: 1,
-  						max: 5,
-  						chance: 1
-  					},
-  					'fur': {
-  						min: 5,
-  						max: 10,
-  						chance: 1
-  					}
-  				},
-  				notification: 'a beast charges out of a ransacked classroom.',
+				enemy: 'lone beast',
 				buttons: {
 					'continue': {
 						text: 'continue',
@@ -861,25 +643,7 @@ Events.Setpieces = {
 			},
 			'c4': {
 				combat: true,
-				enemy: 'beast',
-				char: 'B',
-				damage: 4,
-  				hit: 0.8,
-  				attackDelay: 1,
-  				health: 25,
-  				loot: {
-  					'teeth': {
-  						min: 1,
-  						max: 5,
-  						chance: 1
-  					},
-  					'fur': {
-  						min: 5,
-  						max: 10,
-  						chance: 1
-  					}
-  				},
-  				notification: 'another beast, draw by the noise, leaps out of a copse of trees.',
+				enemy: 'lone beast',
 				buttons: {
 					'continue': {
 						text: 'continue',
@@ -932,30 +696,7 @@ Events.Setpieces = {
 			},
 			'd1': {
 				combat: true,
-				enemy: 'scavenger',
-				char: 'S',
-				damage: 5,
-  				hit: 0.8,
-  				attackDelay: 2,
-  				health: 30,
-  				loot: {
-  					'cured meat': {
-  						min: 1,
-  						max: 5,
-  						chance: 1
-  					},
-  					'leather': {
-  						min: 5,
-  						max: 10,
-  						chance: 0.8
-  					},
-					'steel sword': {
-						min: 1,
-						max: 1,
-						chance: 0.5
-					}
-  				},
-  				notification: 'a panicked scavenger bursts through the door, screaming.',
+				enemy: 'panicked scavenger',
 				buttons: {
 					'continue': {
 						text: 'continue',
@@ -970,29 +711,6 @@ Events.Setpieces = {
 			'd2': {
 				combat: true,
 				enemy: 'vigilante',
-				char: 'V',
-				damage: 6,
-  				hit: 0.8,
-  				attackDelay: 2,
-  				health: 30,
-  				loot: {
-  					'cured meat': {
-  						min: 1,
-  						max: 5,
-  						chance: 1
-  					},
-  					'leather': {
-  						min: 5,
-  						max: 10,
-  						chance: 0.8
-  					},
-  					'steel sword': {
-  						min: 1,
-  						max: 1,
-  						chance: 0.5
-  					}
-  				},
-  				notification: "a man stands over a dead wanderer. notices he's not alone.",
 				buttons: {
 					'continue': {
 						text: 'continue',
@@ -1290,30 +1008,8 @@ Events.Setpieces = {
 			},
 			'b2': {
 				combat: true,
-				notification: 'a huge lizard scrambles up out of the darkness of an old metro station.',
 				enemy: 'lizard',
-				char: 'L',
-				damage: 5,
-  				hit: 0.8,
-  				attackDelay: 2,
-  				health: 20,
-  				loot: {
-  					'scales': {
-  						min: 5,
-  						max: 10,
-  						chance: 0.8
-  					},
-  					'teeth': {
-  						min: 5,
-  						max: 10,
-  						chance: 0.5
-  					},
-  					'meat': {
-  						min: 5,
-  						max: 10,
-  						chance: 0.8
-  					}
-  				},
+				//notification: 'a huge lizard scrambles up out of the darkness of an old metro station.',
 		        buttons: {
 		        	'descend': {	
 						text: 'descend',
@@ -1326,32 +1022,9 @@ Events.Setpieces = {
 		        }
 			},
 			'b3': {
-				notification: 'the shot echoes in the empty street.',
 				combat: true,
-  				enemy: 'sniper',
-  				char: 'S',
-  				damage: 15,
-  				hit: 0.8,
-  				attackDelay: 4,
-  				health: 30,
-				ranged: true,
-  				loot: {
-  					'cured meat': {
-  						min: 1,
-  						max: 5,
-  						chance: 0.8
-  					},
-					'bullets': {
-						min: 1,
-						max: 5,
-						chance: 0.5
-					},
-					'rifle': {
-						min: 1,
-						max: 1,
-						chance: 0.2
-					}
-  				},
+  				enemy: 'urban sniper',
+  				//notification: 'the shot echoes in the empty street.',
 		        buttons: {
 		        	'continue': {	
 						text: 'continue',
@@ -1364,32 +1037,9 @@ Events.Setpieces = {
 		        }
 			},
 			'b4': {
-				notification: 'the soldier steps out from between the buildings, rifle raised.',
 				combat: true,
-  				enemy: 'soldier',
-				ranged: true,
-  				char: 'D',
-  				damage: 8,
-  				hit: 0.8,
-  				attackDelay: 2,
-  				health: 50,
-  				loot: {
-  					'cured meat': {
-  						min: 1,
-  						max: 5,
-  						chance: 0.8
-  					},
-					'bullets': {
-						min: 1,
-						max: 5,
-						chance: 0.5
-					},
-					'rifle': {
-						min: 1,
-						max: 1,
-						chance: 0.2
-					}
-  				},
+  				enemy: 'urban soldier',
+  				//notification: 'the soldier steps out from between the buildings, rifle raised.',
 		        buttons: {
 		        	'continue': {	
 						text: 'continue',
@@ -1402,36 +1052,8 @@ Events.Setpieces = {
 		        }
 			},
 			'b5': {
-				notification: 'a frail man stands defiantly, blocking the path.',
 				combat: true,
   				enemy: 'frail man',
-  				char: 'M',
-  				damage: 1,
-  				hit: 0.8,
-  				attackDelay: 2,
-  				health: 10,
-  				loot: {
-  					'cured meat': {
-  						min: 1,
-  						max: 5,
-  						chance: 0.8
-  					},
-  					'cloth': {
-  						min: 1,
-  						max: 5,
-  						chance: 0.5
-  					},
-  					'leather': {
-  						min: 1,
-  						max: 1,
-  						chance: 0.2
-  					},
-  					'medicine': {
-  					  min: 1,
-  					  max: 3,
-  					  chance: 0.05
-  					}
-  				},
 		        buttons: {
 		        	'continue': {	
 						text: 'continue',
@@ -1476,68 +1098,22 @@ Events.Setpieces = {
 		    }
 			},
 			'b8': {
-				notification: 'an old man bursts through a door, wielding a scalpel.',
 				combat: true,
 				enemy: 'old man',
-  				char: 'M',
-  				damage: 3,
-  				hit: 0.5,
-  				attackDelay: 2,
-  				health: 10,
-  				loot: {
-  					'cured meat': {
-  						min: 1,
-  						max: 3,
-  						chance: 0.5
-  					},
-  					'cloth': {
-  						min: 1,
-  						max: 5,
-  						chance: 0.8
-  					},
-  					'medicine': {
-  					  min: 1,
-  					  max: 2,
-  					  chance: 0.5
-  					}
-  				},
-        buttons: {
-        	'continue': {	
-    				text: 'continue',
-    				nextScene: {0.3: 'c13', 0.7: 'c11', 1: 'end15'}
-    			},
-    			'leave': {
-    				text: 'leave city',
-    				nextScene: 'end'
-    			}
-		    }
+				buttons: {
+					'continue': {	
+						text: 'continue',
+						nextScene: {0.3: 'c13', 0.7: 'c11', 1: 'end15'}
+					},
+					'leave': {
+						text: 'leave city',
+						nextScene: 'end'
+					}
+				}
 			},
 			'c1': {
-				notification: 'a thug is waiting on the other side of the wall.',
 				combat: true,
-				enemy: 'thug',
-  				char: 'T',
-  				damage: 3,
-  				hit: 0.8,
-  				attackDelay: 2,
-  				health: 30,
-  				loot: {
-  					'steel sword': {
-  						min: 1,
-  						max: 1,
-  						chance: 0.5
-  					},
-  					'cured meat': {
-  						min: 1,
-  						max: 3,
-  						chance: 0.5
-  					},
-  					'cloth': {
-  						min: 1,
-  						max: 5,
-  						chance: 0.8
-  					}
-  				},
+				enemy: 'macho thug',
 		        buttons: {
 		        	'continue': {	
 						text: 'continue',
@@ -1551,31 +1127,8 @@ Events.Setpieces = {
 			},
 			
 			'c2': {
-				notification: 'a snarling beast jumps out from behind a car.',
 				combat: true,
 				enemy: 'beast',
-  				char: 'B',
-  				damage: 2,
-  				hit: 0.8,
-  				attackDelay: 1,
-  				health: 30,
-  				loot: {
-  					'meat': {
-  						min: 1,
-  						max: 5,
-  						chance: 0.8
-  					},
-  					'fur': {
-  						min: 1,
-  						max: 5,
-  						chance: 0.8
-  					},
-  					'teeth': {
-  						min: 1,
-  						max: 5,
-  						chance: 0.5
-  					}
-  				},
 		        buttons: {
 		        	'continue': {	
 						text: 'continue',
@@ -1761,81 +1314,33 @@ Events.Setpieces = {
 			},
 			
 			'c11': {
-				notification: 'a tribe of elderly squatters is camped out in this ward.',
 				combat: true,
-				enemy: 'squatters',
-				plural: true,
-				char: 'SSS',
-				damage: 2,
-				hit: 0.7,
-				attackDelay: 0.5,
-				health: 40,
-  			loot: {
-					'cured meat': {
-						min: 1,
-						max: 3,
-						chance: 0.5
+				enemy: 'eldery squatters',
+				buttons: {
+					'continue': {
+						text: 'continue',
+						nextScene: { 1: 'end10' }
 					},
-					'cloth': {
-						min: 3,
-						max: 8,
-						chance: 0.8
-					},
-					'medicine': {
-					  min: 1,
-					  max: 3,
-					  chance: 0.3
-					}
-				},
-        buttons: {
-    			'continue': {
-    				text: 'continue',
-    				nextScene: { 1: 'end10' }
-    			},
-    			'leave': {
+					'leave': {
 						text: 'leave city',
 						nextScene: 'end'
 					}
-		    }
+				}
 			},
 			
 			'c12': {
-				notification: 'a pack of lizards rounds the corner.',
 				combat: true,
 				enemy: 'lizards',
-				plural: true,
-				char: 'LLL',
-				damage: 4,
-				hit: 0.7,
-				attackDelay: 0.7,
-				health: 30,
-  			loot: {
-					'meat': {
-						min: 3,
-						max: 8,
-						chance: 1
+				buttons: {
+					'continue': {
+						text: 'continue',
+						nextScene: { 1: 'end10' }
 					},
-					'teeth': {
-						min: 2,
-						max: 4,
-						chance: 1
-					},
-					'scales': {
-					  min: 3,
-					  max: 5,
-					  chance: 1
-					}
-				},
-        buttons: {
-    			'continue': {
-    				text: 'continue',
-    				nextScene: { 1: 'end10' }
-    			},
-    			'leave': {
+					'leave': {
 						text: 'leave city',
 						nextScene: 'end'
 					}
-		    }
+				}
 			},
 			
 			'c13': {
@@ -1862,21 +1367,8 @@ Events.Setpieces = {
 			},
 						
 			'd1': {
-				notification: 'a large bird nests at the top of the stairs.',
 				combat: true,
-				enemy: 'bird',
-  				char: 'B',
-  				damage: 5,
-  				hit: 0.7,
-  				attackDelay: 1,
-  				health: 45,
-  				loot: {
-  					'meat': {
-  						min: 5,
-  						max: 10,
-  						chance: 0.8
-  					}
-  				},
+				enemy: 'large bird',
 		        buttons: {
 		        	'continue': {	
 						text: 'continue',
@@ -1929,27 +1421,8 @@ Events.Setpieces = {
 			},
 			
 			'd3': {
-				notification: 'a swarm of rats rushes up the tunnel.',
 				combat: true,
 				enemy: 'rats',
-				plural: true,
-  				char: 'RRR',
-  				damage: 1,
-  				hit: 0.8,
-  				attackDelay: 0.25,
-  				health: 60,
-  				loot: {
-  					'fur': {
-  						min: 5,
-  						max: 10,
-  						chance: 0.8
-  					},
-					'teeth': {
-						min: 5,
-						max: 10,
-						chance: 0.5
-					}
-  				},
 		        buttons: {
 		        	'continue': {	
 						text: 'continue',
@@ -1963,26 +1436,8 @@ Events.Setpieces = {
 			},
 			
 			'd4': {
-				notification: 'a large man attacks, waving a bayonet.',
 				combat: true,
 				enemy: 'veteran',
-				char: 'V',
-				damage: 3,
-				hit: 0.8,
-				attackDelay: 2,
-				health: 45,
-				loot: {
-					'bayonet': {
-						min: 1,
-						max: 1,
-						chance: 0.5
-					},
-					'cured meat': {
-						min: 1,
-						max: 5,
-						chance: 0.8
-					}
-				},
 				buttons: {
 					'continue': {
 						text: 'continue',
@@ -1996,32 +1451,9 @@ Events.Setpieces = {
 			},
 			
 			'd5': {
-				notification: 'a second soldier opens fire.',
 				combat: true,
   				enemy: 'soldier',
-				ranged: true,
-  				char: 'D',
-  				damage: 8,
-  				hit: 0.8,
-  				attackDelay: 2,
-  				health: 50,
-  				loot: {
-  					'cured meat': {
-  						min: 1,
-  						max: 5,
-  						chance: 0.8
-  					},
-					'bullets': {
-						min: 1,
-						max: 5,
-						chance: 0.5
-					},
-					'rifle': {
-						min: 1,
-						max: 1,
-						chance: 0.2
-					}
-  				},
+  				//notification: 'a second soldier opens fire.',
 		        buttons: {
 		        	'continue': {	
 						text: 'continue',
@@ -2035,32 +1467,8 @@ Events.Setpieces = {
 			},
 			
 			'd6': {
-				notification: 'a masked soldier rounds the corner, gun drawn',
 				combat: true,
 				enemy: 'commando',
-				char: 'C',
-				ranged: true,
-				damage: 3,
-				hit: 0.9,
-				attackDelay: 2,
-				health: 55,
-				loot: {
-					'rifle': {
-						min: 1,
-						max: 1,
-						chance: 0.5
-					},
-					'bullets': {
-						min: 1,
-						max: 5,
-						chance: 0.8
-					},
-					'cured meat': {
-						min: 1,
-						max: 5,
-						chance: 0.8
-					}
-				},
 				buttons: {
 					'continue': {
 						text: 'continue',
@@ -2074,27 +1482,8 @@ Events.Setpieces = {
 			},
 			
 			'd7': {
-				notification: 'the crowd surges forward.',
 				combat: true,
 				enemy: 'squatters',
-				plural: true,
-				char: 'SSS',
-				damage: 2,
-				hit: 0.7,
-				attackDelay: 0.5,
-				health: 40,
-				loot: {
-					'cloth': {
-						min: 1,
-						max: 5,
-						chance: 0.8
-					},
-					'teeth': {
-						min: 1,
-						max: 5,
-						chance: 0.5
-					}
-				},
 				buttons: {
 					'continue': {
 						text: 'continue',
@@ -2108,26 +1497,8 @@ Events.Setpieces = {
 			},
 			
 			'd8': {
-				notification: 'a youth lashes out with a tree branch.',
 				combat: true,
 				enemy: 'youth',
-				char: 'Y',
-				damage: 2,
-				hit: 0.7,
-				attackDelay: 1,
-				health: 45,
-				loot: {
-					'cloth': {
-						min: 1,
-						max: 5,
-						chance: 0.8
-					},
-					'teeth': {
-						min: 1,
-						max: 5,
-						chance: 0.5
-					}
-				},
 				buttons: {
 					'continue': {
 						text: 'continue',
@@ -2141,26 +1512,8 @@ Events.Setpieces = {
 			},
 			
 			'd9': {
-				notification: 'a squatter stands firmly in the doorway of a small hut.',
 				combat: true,
 				enemy: 'squatter',
-				char: 'S',
-				damage: 3,
-				hit: 0.8,
-				attackDelay: 2,
-				health: 20,
-				loot: {
-					'cloth': {
-						min: 1,
-						max: 5,
-						chance: 0.8
-					},
-					'teeth': {
-						min: 1,
-						max: 5,
-						chance: 0.5
-					}
-				},
 				buttons: {
 					'continue': {
 						text: 'continue',
@@ -2174,36 +1527,9 @@ Events.Setpieces = {
 			},
 			
 			'd10': {
-				notification: 'behind the door, a deformed figure awakes and attacks.',
 				combat: true,
 				enemy: 'deformed',
-				char: 'D',
-				damage: 8,
-				hit: 0.6,
-				attackDelay: 2,
-				health: 40,
-				loot: {
-					'cloth': {
-						min: 1,
-						max: 5,
-						chance: 0.8
-					},
-					'teeth': {
-						min: 2,
-						max: 2,
-						chance: 1
-					},
-					'steel': {
-					  min: 1,
-					  max: 3,
-					  chance: 0.6
-					},
-					'scales': {
-					  min: 2,
-					  max: 3,
-					  chance: 0.1
-					}
-				},
+				//notification: 'behind the door, a deformed figure awakes and attacks.',
 				buttons: {
 					'continue': {
 						text: 'continue',
@@ -2213,22 +1539,9 @@ Events.Setpieces = {
 			},
 			
 			'd11': {
-				notification: 'as soon as the door is open a little bit, hundreds of tentacles erupt.',
 				combat: true,
 				enemy: 'tentacles',
-				plural: true,
-				char: 'TTT',
-				damage: 2,
-				hit: 0.6,
-				attackDelay: 0.5,
-				health: 60,
-				loot: {
-					'meat': {
-						min: 10,
-						max: 20,
-						chance: 1
-					}
-				},
+				//notification: 'as soon as the door is open a little bit, hundreds of tentacles erupt.',
 				buttons: {
 					'continue': {
 						text: 'continue',
@@ -2898,33 +2211,7 @@ Events.Setpieces = {
 			},
 			'occupied': {
 				combat: true,
-				enemy: 'squatter',
-				char: 'S',
-				damage: 3,
-				hit: 0.8,
-				attackDelay: 2,
-				health: 10,
-				notification: 'a man charges down the hall, a rusty blade in his hand',
-				onLoad: function() {
-					World.markVisited(World.curPos[0], World.curPos[1]);
-				},
-				loot: {
- 					'cured meat': {
- 						min: 1,
- 						max: 10,
- 						chance: 0.8
- 					},
-					'leather': {
-						min: 1,
-						max: 10,
-						chance: 0.2
-					},
-					'cloth': {
-						min: 1,
-						max: 10,
-						chance: 0.5
-					}
-				},
+				enemy: 'weak squatter',
 				buttons: {
 					'leave': {
 						text: 'leave',
@@ -3060,30 +2347,6 @@ Events.Setpieces = {
 			'a1': {
 				combat: true,
   				enemy: 'soldier',
-				ranged: true,
-  				char: 'D',
-  				damage: 8,
-  				hit: 0.8,
-  				attackDelay: 2,
-  				health: 50,
-  				loot: {
-  					'cured meat': {
-  						min: 1,
-  						max: 5,
-  						chance: 0.8
-  					},
-					'bullets': {
-						min: 1,
-						max: 5,
-						chance: 0.5
-					},
-					'rifle': {
-						min: 1,
-						max: 1,
-						chance: 0.2
-					}
-  				},
-  				notification: 'a soldier, alerted, opens fire.',
 				buttons: {
 					'continue': {
 						text: 'continue',
@@ -3097,31 +2360,8 @@ Events.Setpieces = {
 			},
 			'a2': {
 				combat: true,
-  				enemy: 'soldier',
-				ranged: true,
-  				char: 'D',
-  				damage: 8,
-  				hit: 0.8,
-  				attackDelay: 2,
-  				health: 50,
-  				loot: {
-  					'cured meat': {
-  						min: 1,
-  						max: 5,
-  						chance: 0.8
-  					},
-					'bullets': {
-						min: 1,
-						max: 5,
-						chance: 0.5
-					},
-					'rifle': {
-						min: 1,
-						max: 1,
-						chance: 0.2
-					}
-  				},
-  				notification: 'a second soldier joins the fight.',
+  				enemy: 'urban soldier',
+  				//notification: 'a second soldier joins the fight.',
  				buttons: {
 					'continue': {
 						text: 'continue',
@@ -3135,25 +2375,7 @@ Events.Setpieces = {
 			},
 			'a3': {
 				combat: true,
-				enemy: 'veteran',
-				char: 'V',
-				damage: 10,
-				hit: 0.8,
-				attackDelay: 2,
-				health: 65,
-				loot: {
-					'bayonet': {
-						min: 1,
-						max: 1,
-						chance: 0.5
-					},
-					'cured meat': {
-						min: 1,
-						max: 5,
-						chance: 0.8
-					}
-				},
-				notification: 'a grizzled soldier attacks, waving a bayonet.',
+				enemy: 'grizzled veteran',
  				buttons: {
 					'continue': {
 						text: 'continue',
@@ -3204,24 +2426,6 @@ Events.Setpieces = {
 			'a1': {
 				combat: true,
 				enemy: 'man',
-				char: 'M',
-				damage: 3,
-				hit: 0.8,
-				attackDelay: 2,
-				health: 10,
-				loot: {
-					'cured meat': {
-						min: 1,
-						max: 5,
-						chance: 0.8
-					},
-					'cloth': {
-						min: 1,
-						max: 5,
-						chance: 0.8
-					}
-				},
-				notification: 'a man joins the fight',
 				buttons: {
 					'continue': {
 						text: 'continue',
@@ -3236,24 +2440,6 @@ Events.Setpieces = {
 			'a2': {
 				combat: true,
  				enemy: 'man',
- 				char: 'M',
- 				damage: 3,
- 				hit: 0.8,
- 				attackDelay: 2,
- 				health: 10,
- 				loot: {
-					'cured meat': {
-						min: 1,
- 						max: 5,
-						chance: 0.8
-					},
-					'cloth': {
-						min: 1,
- 						max: 5,
-						chance: 0.8
-					}
- 				},
- 				notification: 'a man joins the fight',
  				buttons: {
 					'continue': {
 						text: 'continue',
@@ -3268,29 +2454,6 @@ Events.Setpieces = {
 			'a3': {
 				combat: true,
  				enemy: 'chief',
- 				char: 'C',
- 				damage: 5,
- 				hit: 0.8,
- 				attackDelay: 2,
- 				health: 20,
- 				loot: {
-					'cured meat': {
-						min: 5,
- 						max: 10,
-						chance: 1
-					},
-					'cloth': {
-						min: 5,
- 						max: 10,
-						chance: 0.8
-					},
-					'iron': {
-						min: 1,
-						max: 5,
-						chance: 0.8
-					}
- 				},
- 				notification: 'only the chief remains.',
  				buttons: {
 					'continue': {
 						text: 'continue',
@@ -3343,29 +2506,6 @@ Events.Setpieces = {
  			'enter': {
  				combat: true,
  				enemy: 'beastly matriarch',
- 				char: 'M',
- 				damage: 4,
- 				hit: 0.8,
- 				attackDelay: 2,
- 				health: 10,
- 				loot: {
- 					'teeth': {
- 						min: 5,
- 						max: 10,
- 						chance: 1
- 					},
-					'scales': {
-						min: 5,
- 						max: 10,
-						chance: 0.8
-					},
-					'cloth': {
-						min: 5,
- 						max: 10,
-						chance: 0.5
-					}
- 				},
- 				notification: 'a large creature lunges, muscles rippling in the torchlight',
  				buttons: {
 					'leave': {
 						text: 'leave',

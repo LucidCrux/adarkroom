@@ -11,30 +11,7 @@ Events.Encounters = [
  		scenes: {
  			'start': {
  				combat: true,
- 				enemy: 'snarling beast',
- 				char: 'B',
- 				damage: 1,
- 				hit: 0.8,
- 				attackDelay: 1,
- 				health: 5,
- 				loot: {
- 					'fur': {
- 						min: 1,
- 						max: 3,
- 						chance: 1
- 					},
- 					'meat': {
- 						min: 1,
- 						max: 3,
- 						chance: 1
- 					},
- 					'teeth': {
- 						min: 1,
- 						max: 3,
- 						chance: 0.8
- 					}
- 				},
- 				notification: 'a snarling beast leaps out of the underbrush'
+ 				enemy: 'snarling beast'
  			}
  		}
 	},
@@ -46,30 +23,7 @@ Events.Encounters = [
   		scenes: {
   			'start': {
   				combat: true,
-  				enemy: 'gaunt man',
-  				char: 'G',
-  				damage: 2,
-  				hit: 0.8,
-  				attackDelay: 2,
-  				health: 6,
-  				loot: {
-  					'cloth': {
-  						min: 1,
-  						max: 3,
-  						chance: 0.8
-  					},
-  					'teeth': {
-  						min: 1,
-  						max: 2,
-  						chance: 0.8
-  					},
-  					'leather': {
-  						min: 1,
-  						max: 2,
-  						chance: 0.5
-  					}
-  				},
-  				notification: 'a gaunt man approaches, a crazed look in his eye'
+  				enemy: 'gaunt man'
   			}
 		}
   	},
@@ -81,30 +35,7 @@ Events.Encounters = [
   		scenes: {
   			'start': {
   				combat: true,
-  				enemy: 'strange bird',
-  				char: 'B',
-  				damage: 3,
-  				hit: 0.8,
-  				attackDelay: 2,
-  				health: 4,
-  				loot: {
-  					'scales': {
-  						min: 1,
-  						max: 3,
-  						chance: 0.8
-  					},
-  					'teeth': {
-  						min: 1,
-  						max: 2,
-  						chance: 0.5
-  					},
-  					'meat': {
-  						min: 1,
-  						max: 3,
-  						chance: 0.8
-  					}
-  				},
-  				notification: 'a strange looking bird speeds across the plains'
+  				enemy: 'strange bird'
   			}
 		}
   	},
@@ -117,35 +48,7 @@ Events.Encounters = [
   		scenes: {
   			'start': {
   				combat: true,
-  				enemy: 'shivering man',
-  				char: 'S',
-  				damage: 5,
-  				hit: 0.5,
-  				attackDelay: 1,
-  				health: 20,
-  				loot: {
-  					'cloth': {
-  						min: 1,
-  						max: 1,
-  						chance: 0.2
-  					},
-  					'teeth': {
-  						min: 1,
-  						max: 2,
-  						chance: 0.8
-  					},
-  					'leather': {
-  						min: 1,
-  						max: 1,
-  						chance: 0.2
-  					},
-  					'medicine': {
-  					  min: 1,
-  					  max: 3,
-  					  chance: 0.7
-  					}
-  				},
-  				notification: 'a shivering man approaches and attacks with surprising strength'
+  				enemy: 'shivering man'
   			}
 		}
   },
@@ -157,30 +60,7 @@ Events.Encounters = [
  		scenes: {
  			'start': {
  				combat: true,
- 				enemy: 'man-eater',
- 				char: 'E',
- 				damage: 3,
- 				hit: 0.8,
- 				attackDelay: 1,
- 				health: 25,
- 				loot: {
- 					'fur': {
- 						min: 5,
- 						max: 10,
- 						chance: 1
- 					},
- 					'meat': {
- 						min: 5,
- 						max: 10,
- 						chance: 1
- 					},
- 					'teeth': {
- 						min: 5,
- 						max: 10,
- 						chance: 0.8
- 					}
- 				},
- 				notification: 'a large creature attacks, claws freshly bloodied'
+ 				enemy: 'man-eater'
  			}
  		}
 	},
@@ -192,35 +72,7 @@ Events.Encounters = [
   		scenes: {
   			'start': {
   				combat: true,
-  				enemy: 'scavenger',
-  				char: 'S',
-  				damage: 4,
-  				hit: 0.8,
-  				attackDelay: 2,
-  				health: 30,
-  				loot: {
-  					'cloth': {
-  						min: 5,
-  						max: 10,
-  						chance: 0.8
-  					},
-  					'leather': {
-  						min: 5,
-  						max: 10,
-  						chance: 0.8
-  					},
-  					'iron': {
-  						min: 1,
-  						max: 5,
-  						chance: 0.5
-  					},
-  					'medicine': {
-  					  min: 1,
-  					  max: 2,
-  					  chance: 0.1
-  					}
-  				},
-  				notification: 'a scavenger draws close, hoping for an easy score'
+  				enemy: 'scavenger'
   			}
 		}
   	},
@@ -232,30 +84,7 @@ Events.Encounters = [
   		scenes: {
   			'start': {
   				combat: true,
-  				enemy: 'lizard',
-  				char: 'L',
-  				damage: 5,
-  				hit: 0.8,
-  				attackDelay: 2,
-  				health: 20,
-  				loot: {
-  					'scales': {
-  						min: 5,
-  						max: 10,
-  						chance: 0.8
-  					},
-  					'teeth': {
-  						min: 5,
-  						max: 10,
-  						chance: 0.5
-  					},
-  					'meat': {
-  						min: 5,
-  						max: 10,
-  						chance: 0.8
-  					}
-  				},
-  				notification: 'the grass thrashes wildly as a huge lizard pushes through'
+  				enemy: 'lizard'
   			}
 		}
   	},
@@ -268,30 +97,7 @@ Events.Encounters = [
  		scenes: {
  			'start': {
  				combat: true,
- 				enemy: 'feral terror',
- 				char: 'F',
- 				damage: 6,
- 				hit: 0.8,
- 				attackDelay: 1,
- 				health: 45,
- 				loot: {
- 					'fur': {
- 						min: 5,
- 						max: 10,
- 						chance: 1
- 					},
- 					'meat': {
- 						min: 5,
- 						max: 10,
- 						chance: 1
- 					},
- 					'teeth': {
- 						min: 5,
- 						max: 10,
- 						chance: 0.8
- 					}
- 				},
- 				notification: 'a beast, wilder than imagining, erupts out of the foliage'
+ 				enemy: 'feral terror'
  			}
  		}
 	},
@@ -303,36 +109,7 @@ Events.Encounters = [
   		scenes: {
   			'start': {
   				combat: true,
-  				enemy: 'soldier',
-				ranged: true,
-  				char: 'D',
-  				damage: 8,
-  				hit: 0.8,
-  				attackDelay: 2,
-  				health: 50,
-  				loot: {
-  					'cloth': {
-  						min: 5,
-  						max: 10,
-  						chance: 0.8
-  					},
-  					'bullets': {
-  						min: 1,
-  						max: 5,
-  						chance: 0.5
-  					},
-  					'rifle': {
-  						min: 1,
-  						max: 1,
-  						chance: 0.2
-  					},
-  					'medicine': {
-  					  min: 1,
-  					  max: 2,
-  					  chance: 0.1
-  					}
-  				},
-  				notification: 'a soldier opens fire from across the desert'
+  				enemy: 'soldier'
   			}
 		}
   	},
@@ -344,36 +121,7 @@ Events.Encounters = [
   		scenes: {
   			'start': {
   				combat: true,
-  				enemy: 'sniper',
-  				char: 'S',
-  				damage: 15,
-  				hit: 0.8,
-  				attackDelay: 4,
-  				health: 30,
-				ranged: true,
-  				loot: {
-  					'cloth': {
-  						min: 5,
-  						max: 10,
-  						chance: 0.8
-  					},
-  					'bullets': {
-  						min: 1,
-  						max: 5,
-  						chance: 0.5
-  					},
-  					'rifle': {
-  						min: 1,
-  						max: 1,
-  						chance: 0.2
-  					},
-  					'medicine': {
-  					  min: 1,
-  					  max: 2,
-  					  chance: 0.1
-  					}
-  				},
-  				notification: 'a shot rings out, from somewhere in the long grass'
+  				enemy: 'sniper'
   			}
 		}
   	},

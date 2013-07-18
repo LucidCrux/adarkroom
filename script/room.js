@@ -747,6 +747,39 @@ var Room = {
 				Button.setDisabled(good.button, false);
 			}
 		}
+		//sloppy to get compass to show up for sale
+		for(var k in Content.upgradeList) {
+			good = Content.upgradeList[k];
+			var max = Engine.num(k, good) + 1 > good.maximum;
+			if(good.button == null) {
+				if(Room.buyUnlocked(k)) {
+					good.button = new Button.Button({
+						id: 'build_' + k,
+						cost: good.getCost(),
+						text: k,
+						click: Room.buy,
+						width: '80px'
+					}).css('opacity', 0).attr('buildThing', k).appendTo(buySection).animate({opacity:1}, 300, 'linear');
+				}
+			} else {
+				// refresh the tooltip
+				var costTooltip = $('.tooltip', good.button);
+				costTooltip.empty();
+				var cost = good.getCost();
+				for(var k in cost) {
+					$("<div>").addClass('row_key').text(k).appendTo(costTooltip);
+					$("<div>").addClass('row_val').text(cost[k]).appendTo(costTooltip);
+				}
+				if(max && !good.button.hasClass('disabled')) {
+					Notifications.notify(Room, good.maxMsg);
+				}
+			}
+			if(max) {
+				Button.setDisabled(good.button, true);
+			} else {
+				Button.setDisabled(good.button, false);
+			}
+		}
 		
 		if(needsAppend && buildSection.children().length > 0) {
 			buildSection.appendTo('div#roomPanel').animate({opacity: 1}, 300, 'linear');

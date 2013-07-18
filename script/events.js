@@ -66,15 +66,16 @@ var Events = {
 	startCombat: function(scene) {
 		Engine.event('game event', 'combat');
 		Events.won = false;
+		var enemy = Content.mobList[scene.enemy];
 		var desc = $('#description', Events.eventPanel());
 		
-		$('<div>').text(scene.notification).appendTo(desc);
+		$('<div>').text(enemy.notification).appendTo(desc);
 		
 		// Draw the wanderer
 		Events.createFighterDiv('@', World.health, World.getMaxHealth()).attr('id', 'wanderer').appendTo(desc);
 		
 		// Draw the enemy
-		Events.createFighterDiv(scene.char, scene.health, scene.health).attr('id', 'enemy').appendTo(desc);
+		Events.createFighterDiv(enemy.char, enemy.health, enemy.health).attr('id', 'enemy').appendTo(desc);
 		
 		// Draw the action buttons
 		var btns = $('#buttons', Events.eventPanel());
@@ -110,7 +111,7 @@ var Events = {
 	  }
 		
 		// Set up the enemy attack timer
-		Events._enemyAttackTimer = setTimeout(Events.enemyAttack, scene.attackDelay * 1000);
+		Events._enemyAttackTimer = setTimeout(Events.enemyAttack, enemy.attackDelay * 1000);
 	},
 	
 	createEatMeatButton: function(cooldown) {
@@ -414,16 +415,17 @@ var Events = {
 	enemyAttack: function() {
 		
 		var scene = Events.activeEvent().scenes[Events.activeScene];
+		var enemy = Content.mobList[scene.enemy];
 		
 		if(!$('#enemy').data('stunned')) {
-			var toHit = scene.hit;
+			var toHit = enemy.hit;
 			toHit *= Engine.hasPerk('evasive') ? 0.8 : 1;
 			var dmg = -1;
 			if(Math.random() <= toHit) {
-				dmg = scene.damage;
+				dmg = enemy.damage;
 			}
 			
-			var attackFn = scene.ranged ? Events.animateRanged : Events.animateMelee;
+			var attackFn = enemy.ranged ? Events.animateRanged : Events.animateMelee;
 			
 			attackFn($('#enemy'), dmg, function() {
 					if($('#wanderer').data('hp') <= 0) {
@@ -436,7 +438,7 @@ var Events = {
 		}
 		
 		Events._enemyAttackTimer = 
-			setTimeout(Events.enemyAttack, scene.attackDelay * 1000);
+			setTimeout(Events.enemyAttack, enemy.attackDelay * 1000);
 	},
 	
 	winFight: function() {
@@ -446,13 +448,14 @@ var Events = {
 			setTimeout(function() {
 				try {
 					var scene = Events.activeEvent().scenes[Events.activeScene];
+					var enemy = Content.mobList[scene.enemy];
 					var desc = $('#description', Events.eventPanel());
 					var btns = $('#buttons', Events.eventPanel());
 					desc.empty();
 					btns.empty();
-					$('<div>').text('the ' + scene.enemy + (scene.plural ? ' are' : ' is') + ' dead.').appendTo(desc);
+					$('<div>').text('the ' + enemy.name + (enemy.plural ? ' are' : ' is') + ' dead.').appendTo(desc);
 					
-					Events.drawLoot(scene.loot);
+					Events.drawLoot(enemy.loot);
 					
 					if(scene.buttons) {
 						// Draw the buttons

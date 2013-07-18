@@ -74,7 +74,7 @@ jQuery.extend(Content.Item, {
 });
 
 Content.Equipment = Object.create(Content.Thing);
-jQuery.extend(Content.Weapon, {
+jQuery.extend(Content.Equipment, {
 	type: 'equipment',
 	equipType: 'misc',
 	

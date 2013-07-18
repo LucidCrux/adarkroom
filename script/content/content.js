@@ -70,6 +70,7 @@ $.extend(Content.Item, {
 	type: 'item',
 	consumable: false,
 	material: false,
+	weight: 1,
 	drops: {},
 	trade: [{wood: 10}],
 	getTrade: function (index) {

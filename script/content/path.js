@@ -1,18 +1,6 @@
 var Path = {
 		
 	DEFAULT_BAG_SPACE: 10,
-	
-	// Everything not in this list weighs 1
-	Weight: {
-		'bone spear': 2,
-		'iron sword': 3,
-		'steel sword': 5,
-		'rifle': 5,
-		'bullets': 0.1,
-		'energy cell': 0.2,
-		'laser rifle': 5,
-		'bolas': 0.5
-	},
 		
 	name: 'Path',
 	options: {}, // Nuthin'
@@ -52,8 +40,12 @@ var Path = {
 	},
 	
 	getWeight: function(thing) {
-		var w = Path.Weight[thing];
-		if(typeof w != 'number') w = 1;
+		var w = null;
+		if(Content.itemList[thing]) {
+			w = Content.itemList[thing].weight;
+		} else if(Content.weaponList[thing]) {
+			w = Content.weaponList[thing].weight;
+		}
 		
 		return w;
 	},

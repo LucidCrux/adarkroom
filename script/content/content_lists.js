@@ -191,6 +191,7 @@ Content.itemStatArray = [
 	//Consumables
 	{	name: 'medicine',
 		consumable:true,
+		weight: 0.3,
 		trade: [{
 				'scales': 50,
 				'teeth': 30
@@ -198,10 +199,12 @@ Content.itemStatArray = [
 	},
 	{	name: 'bullets',
 		consumable:true,
+		weight: 0.1,
 		trade: [{ 'scales': 10 }]
 	},
 	{	name: 'energy cell',
 		consumable:true,
+		weight: 0.2,
 		trade: [{
 				'scales': 10,
 				'teeth': 10
@@ -324,6 +327,7 @@ Content.weaponStatArray = [
 	{
 		name: 'bone spear',
 		weaponType: 'melee',
+		weight: 2,
 		damage: 2,
 		cooldown: 2,
 		verb: 'stab',
@@ -336,6 +340,7 @@ Content.weaponStatArray = [
 	{
 		name: 'iron sword',
 		weaponType: 'melee',
+		weight: 3,
 		damage: 4,
 		cooldown: 2,
 		verb: 'swing',
@@ -349,6 +354,7 @@ Content.weaponStatArray = [
 	{
 		name: 'steel sword',
 		weaponType: 'melee',
+		weight: 3.5,
 		damage: 6,
 		cooldown: 2,
 		verb: 'slash',
@@ -362,6 +368,7 @@ Content.weaponStatArray = [
 	{
 		name: 'bayonet',
 		weaponType: 'melee',
+		weight: 1.5,
 		damage: 8,
 		cooldown: 2,
 		verb: 'thrust',
@@ -374,6 +381,7 @@ Content.weaponStatArray = [
 	{
 		name: 'rifle',
 		weaponType: 'ranged',
+		weight: 5,
 		damage: 5,
 		cooldown: 1,
 		verb: 'shoot',
@@ -387,7 +395,8 @@ Content.weaponStatArray = [
 	},
 	{
 		name: 'laser rifle',
-		type: 'ranged',
+		weaponType: 'ranged',
+		weight: 5,
 		damage: 8,
 		cooldown: 1,
 		verb: 'blast',
@@ -395,7 +404,7 @@ Content.weaponStatArray = [
 	},
 	{
 		name: 'grenade',
-		type: 'ranged',
+		weaponType: 'ranged',
 		damage: 15,
 		cooldown: 5,
 		verb: 'lob',
@@ -407,7 +416,8 @@ Content.weaponStatArray = [
 	},
 	{
 		name: 'bola',
-		type: 'ranged',
+		weaponType: 'ranged',
+		weight: 0.5,
 		damage: 'stun',
 		cooldown: 15,
 		verb: 'tangle',

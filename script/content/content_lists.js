@@ -306,9 +306,15 @@ Content.equipmentStatArray = [
 		equipType: 'tool',
 		maximum: 1,
 		trade: [{ 
-				fur: 400, 
-				scales: 20, 
-				teeth: 10 
+				'fur': 400, 
+				'scales': 20, 
+				'teeth': 10 
+		}]
+	},
+	{	name: 'charm',
+		equipType: 'misc',
+		trade: [{ 
+				'fur': 2500, 
 		}]
 	}
 ];

@@ -41,10 +41,11 @@ var Path = {
 	
 	getWeight: function(thing) {
 		var w = null;
-		if(Content.itemList[thing]) {
-			w = Content.itemList[thing].weight;
-		} else if(Content.weaponList[thing]) {
-			w = Content.weaponList[thing].weight;
+		if(!Content.allItemsList[thing]) { //if this is called it means something is wrong
+			w = 1,
+			Engine.log('WARNING: -' + thing + '- not in Content.allItemList.')
+		} else {
+			w = Content.allItemsList[thing].weight;
 		}
 		
 		return w;
@@ -154,7 +155,7 @@ var Path = {
 			'bayonet': {type: 'weapon' },
 			'charm': {type: 'tool'},
 			'medicine': {type: 'tool'}
-		}, Content.buildingList, Content.upgradeList, Content.itemList, Content.weaponList);
+		}, Content.allItemList);
 		
 		for(var k in carryable) {
 			var store = carryable[k];

@@ -47,9 +47,7 @@ Content.Thing = {
 	buildMsg: 'made a thing',
 	cost: [{wood: 10}],
 	getCost: function (index) {
-		if(index == undefined) {
-			index = 0;
-		};
+		if(!index) { index = 0 };
 		return this.cost[index];
 	}
 };

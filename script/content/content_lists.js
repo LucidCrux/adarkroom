@@ -24,9 +24,7 @@ Content.buildingStatArray = [
 		availableMsg: 'builder says she can make a cart for carrying wood',
 		buildMsg: 'the rickety cart will carry more wood from the forest',
 		type: 'building',
-		cost: {
-				'wood': 30
-		}
+		cost: [{ 'wood': 30 }]
 
 	},
 	{	name: 'hut',
@@ -49,11 +47,11 @@ Content.buildingStatArray = [
 		availableMsg: 'villagers could help hunt, given the means',
 		buildMsg: 'the hunting lodge stands in the forest, a ways out of town',
 		type: 'building',
-		cost: {
+		cost: [{
 				wood: 200,
 				fur: 10,
 				meat: 5
-		}
+		}]
 	},
 	{	name: 'trading post',
 		button: null,
@@ -61,10 +59,10 @@ Content.buildingStatArray = [
 		availableMsg: "a trading post would make commerce easier",
 		buildMsg: "now the nomads have a place to set up shop, they might stick around a while",
 		type: 'building',
-		cost: {
+		cost: [{
 				'wood': 400,
 				'fur': 100
-		}
+		}]
 	},
 	{	name: 'tannery',
 		button: null,
@@ -72,10 +70,10 @@ Content.buildingStatArray = [
 		availableMsg: "builder says leather could be useful. says the villagers could make it.",
 		buildMsg: 'tannery goes up quick, on the edge of the village',
 		type: 'building',
-		cost: {
+		cost: [{
 				'wood': 500,
 				'fur': 50
-		}
+		}]
 	},
 	{	name: 'smokehouse',
 		button: null,
@@ -83,10 +81,10 @@ Content.buildingStatArray = [
 		availableMsg: "should cure the meat, or it'll spoil. builder says she can fix something up.",
 		buildMsg: 'builder finishes the smokehouse. she looks hungry.',
 		type: 'building',
-		cost: {
+		cost: [{
 				'wood': 600,
 				'meat': 50
-		}
+		}]
 	},
 	{	name: 'workshop',
 		button: null,
@@ -94,11 +92,11 @@ Content.buildingStatArray = [
 		availableMsg: "builder says she could make finer things, if she had the tools",
 		buildMsg: "workshop's finally ready. builder's excited to get to it",
 		type: 'building',
-		cost: {
+		cost: [{
 				'wood': 800,
 				'leather': 100,
 				'scales': 10
-		}
+		}]
 	},
 	{	name: 'steelworks',
 		button: null,
@@ -106,11 +104,11 @@ Content.buildingStatArray = [
 		availableMsg: "builder says the villagers could make steel, given the tools",
 		buildMsg: "a haze falls over the village as the steelworks fires up",
 		type: 'building',
-		cost: {
+		cost: [{
 				'wood': 1500,
 				'iron': 100,
 				'coal': 100
-		}
+		}]
 	},
 	{	name: 'armoury',
 		button: null,
@@ -118,11 +116,11 @@ Content.buildingStatArray = [
 		availableMsg: "builder says it'd be useful to have a steady source of bullets",
 		buildMsg: "armoury's done, welcoming back the weapons of the past.",
 		type: 'building',
-		cost: {
+		cost: [{
 				'wood': 3000,
 				'steel': 100,
 				'sulphur': 50
-		}
+		}]
 	}
 ];
 
@@ -133,95 +131,95 @@ Content.upgradeStatArray = [
 		type: 'upgrade',
 		maximum: 1,
 		buildMsg: 'this waterskin\'ll hold a bit of water, at least',
-		cost: {
+		cost: [{
 				'leather': 50
-		}
+		}]
 	},
 	{	name: 'cask',
 		button: null,
 		type: 'upgrade',
 		maximum: 1,
 		buildMsg: 'the cask holds enough water for longer expeditions',
-		cost: {
+		cost: [{
 				'leather': 100,
 				'iron': 20
-		}
+		}]
 	},
 	{	name: 'water tank',
 		button: null,
 		type: 'upgrade',
 		maximum: 1,
 		buildMsg: 'never go thirsty again',
-		cost: {
+		cost: [{
 				'iron': 100,
 				'steel': 50
-		}
+		}]
 	},
 	{	name: 'rucksack',
 		button: null,
 		type: 'upgrade',
 		maximum: 1,
 		buildMsg: 'carrying more means longer expeditions to the wilds',
-		cost: {
+		cost: [{
 				'leather': 200
-		}
+		}]
 	},
 	{	name: 'wagon',
 		button: null,
 		type: 'upgrade',
 		maximum: 1,
 		buildMsg: 'the wagon can carry a lot of supplies',
-		cost: {
+		cost: [{
 				'wood': 500,
 				'iron': 100
-		}
+		}]
 	},
 	{	name: 'convoy',
 		button: null,
 		type: 'upgrade',
 		maximum: 1,
 		buildMsg: 'the convoy can haul mostly everything',
-		cost: {
+		cost: [{
 				'wood': 1000,
 				'iron': 200,
 				'steel': 100
-		}
+		}]
 	},
 	{	name: 'l armour',
 		type: 'upgrade',
 		maximum: 1,
 		buildMsg: "leather's not strong. better than rags, though.",
-		cost: {
+		cost: [{
 				'leather': 200,
 				'scales': 20
-		}
+		}]
 	},
 	{	name: 'i armour',
 		type: 'upgrade',
 		maximum: 1,
 		buildMsg: "iron's stronger than leather",
-		cost: {
+		cost: [{
 				'leather': 200,
 				'iron': 100
-		}
+		}]
 	},
 	{	name: 's armour',
 		type: 'upgrade',
 		maximum: 1,
 		buildMsg: "steel's stronger than iron",
-		cost: {
+		cost: [{
 				'leather': 200,
 				'steel': 100
-		}
+		}]
 	},
 	{	name: 'compass',
 		type: 'upgrade',
 		maximum: 1,
-		cost: { 
+		cost: [{ 
 				fur: 400, 
 				scales: 20, 
 				teeth: 10 
-		}
+		}]
 	}
 ];
 
@@ -229,69 +227,68 @@ Content.upgradeStatArray = [
 Content.itemStatArray = [
 	{	name: 'scales',
 		type: 'good',
-		cost: { fur: 150 }
+		cost: [{ fur: 150 }]
 	},
 	{	name: 'teeth',
 		type: 'good',
-		cost: { fur: 300 }
-		}
+		cost: [{ fur: 300 }]
 	},
 	{	name: 'iron',
 		type: 'good',
-		cost: {
+		cost: [{
 				'fur': 150,
 				'scales': 50
-		}
+		}]
 	},
 	{	name: 'coal',
 		type: 'good',
-		cost: {
+		cost: [{
 				'fur': 200,
 				'teeth': 50
-		}
+		}]
 	},
 	{	name: 'steel',
 		type: 'good',
-		cost: {
+		cost: [{
 				'fur': 300,
 				'scales': 50,
 				'teeth': 50
-		}
+		}]
 	},
 	{	name: 'alien alloy',
 		type: 'good',
-		cost: {
+		cost: [{
 				'fur': 1500,
 				'scales': 750,
 				'teeth': 300
-		}
+		}]
 	},
 	{	name: 'medicine',
 		type: 'good',
-		cost: {
+		cost: [{
 				'scales': 50,
 				'teeth': 30
-		}
+		}]
 	},
 	{	name: 'bullets',
 		type: 'good',
-		cost: {	'scales': 10 }
+		cost: [{ 'scales': 10 }]
 	},
 	{	name: 'energy cell',
 		type: 'good',
-		cost: {
+		cost: [{
 				'scales': 10,
 				'teeth': 10
-		}
+		}]
 	},
 	{	name: 'torch',
 		button: null,
 		type: 'tool',
 		buildMsg: 'a torch to keep the dark away',
-		cost: {
+		cost: [{
 				'wood': 1,
 				'cloth': 1
-		}
+		}]
 	}
 ];
 
@@ -313,10 +310,10 @@ Content.weaponStatArray = [
 		cooldown: 2,
 		verb: 'stab',
 		buildMsg: "this spear's not elegant, but it's pretty good at stabbing",
-		cost: {
+		cost: [{
 				'wood': 100,
 				'teeth': 5
-		}
+		}]
 	},
 	{
 		name: 'iron sword',
@@ -325,11 +322,11 @@ Content.weaponStatArray = [
 		cooldown: 2,
 		verb: 'swing',
 		buildMsg: "sword is sharp. good protection out in the wilds.",
-		cost: {
+		cost: [{
 				'wood': 200,
 				'leather': 50,
 				'iron': 20
-		}
+		}]
 	},
 	{
 		name: 'steel sword',
@@ -338,11 +335,11 @@ Content.weaponStatArray = [
 		cooldown: 2,
 		verb: 'slash',
 		buildMsg: "the steel is strong, and the blade true.",
-		cost: {
+		cost: [{
 				'wood': 500,
 				'leather': 100,
 				'steel': 20
-		}
+		}]
 	},
 	{
 		name: 'bayonet',
@@ -350,10 +347,10 @@ Content.weaponStatArray = [
 		damage: 8,
 		cooldown: 2,
 		verb: 'thrust',
-		cost: {
+		cost: [{
 				'scales': 500,
 				'teeth': 250
-		}
+		}]
 	},
 	//Ranged
 	{
@@ -364,11 +361,11 @@ Content.weaponStatArray = [
 		verb: 'shoot',
 		useCost: { 'bullets': 1 },
 		buildMsg: "black powder and bullets, like the old days.",
-		cost: {
+		cost: [{
 				'wood': 200,
 				'steel': 50,
 				'sulphur': 50
-		}
+		}]
 	},
 	{
 		name: 'laser rifle',
@@ -385,10 +382,10 @@ Content.weaponStatArray = [
 		cooldown: 5,
 		verb: 'lob',
 		useCost: { 'grenade': 1 },
-		cost: {
+		cost: [{
 				'scales': 100,
 				'teeth': 50
-		}
+		}]
 	},
 	{
 		name: 'bola',
@@ -397,9 +394,9 @@ Content.weaponStatArray = [
 		cooldown: 15,
 		verb: 'tangle',
 		useCost: { 'bola': 1 },
-		cost: {
+		cost: [{
 				'teeth': 10
-		}
+		}]
 	}
 ];
 
@@ -1010,3 +1007,4 @@ Content.populateListFromStats (Content.upgradeStatArray, Content.Upgrade, Conten
 Content.populateListFromStats (Content.itemStatArray, Content.Item, Content.itemList);
 Content.populateListFromStats (Content.weaponStatArray, Content.Weapon, Content.weaponList);
 Content.populateListFromStats (Content.mobStatArray, Content.Mob, Content.mobList);
+alert("content is loaded");

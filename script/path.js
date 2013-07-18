@@ -162,7 +162,7 @@ var Path = {
 			'bayonet': {type: 'weapon' },
 			'charm': {type: 'tool'},
 			'medicine': {type: 'tool'}
-		}, Room.Craftables);
+		}, Content.buildingList, Content.upgradeList, Content.itemList, Content.weaponList);
 		
 		for(var k in carryable) {
 			var store = carryable[k];

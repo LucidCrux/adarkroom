@@ -348,12 +348,19 @@ var Space = {
 		clearTimeout(Events._eventTimeout);
 		clearTimeout(Room._fireTimer);
 		clearTimeout(Room._tempTimer);
-		for(var k in Room.Craftables) {
-			Room.Craftables[k].button = null;
+		for(var k in Content.buildingList) {
+			Content.buildingList[k].button = null;
 		}
-		for(var k in Room.TradeGoods) {
-			Room.TradeGoods[k].button = null;
+		for(var k in Content.upgradeList) {
+			Content.upgradeList[k].button = null;
 		}
+		for(var k in Content.buildingList) {
+			Content.buildingList[k].button = null;
+		}
+		for(var k in Content.buildingList) {
+			Content.buildingList[k].button = null;
+		}
+
 		delete Outside._popTimeout;
 		
 		$('#hullRemaining', Space.panel).animate({opacity: 0}, 500, 'linear');

@@ -1007,4 +1007,9 @@ Content.populateListFromStats (Content.upgradeStatArray, Content.Upgrade, Conten
 Content.populateListFromStats (Content.itemStatArray, Content.Item, Content.itemList);
 Content.populateListFromStats (Content.weaponStatArray, Content.Weapon, Content.weaponList);
 Content.populateListFromStats (Content.mobStatArray, Content.Mob, Content.mobList);
-alert("content is loaded");
+//delete stat lists as they are no longer used
+delete Content.buildingStatArray;
+delete Content.upgradeStatArray;
+delete Content.itemStatArray;
+delete Content.weaponStatArray;
+delete Content.mobStatArray;

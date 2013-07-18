@@ -8,19 +8,7 @@ var Room = {
 	_BUILDER_STATE_DELAY: 0.5 * 60 * 1000, // time between builder state updates
 	_STOKE_COOLDOWN: 10, // cooldown to stoke the fire
 	_NEED_WOOD_DELAY: 15 * 1000, // from when the stranger shows up, to when you need wood
-	
-	Craftables: {
-	},
-	
-	TradeGoods: {
-	},
-		
-	MiscItems: {
-	  'laser rifle': {
-	    type: 'weapon'
-	  }
-	},
-	
+			
 	name: "Room",
 	init: function(options) {
 		this.options = $.extend(
@@ -327,12 +315,14 @@ var Room = {
 		for(var k in State.stores) {
 			
 			var type = null;
-			if(Room.Craftables[k]) {
-				type = Room.Craftables[k].type;
-			} else if(Room.TradeGoods[k]) {
-				type = Room.TradeGoods[k].type;
-			} else if (Room.MiscItems[k]) {
-			  type = Room.MiscItems[k].type;
+			if(Content.buildingList[k]) {
+				type = Content.buildingList[k].type;
+			} else if (Content.upgradeList[k]) {
+				type = Content.upgradeList[k].type;
+			} else if (Content.itemList[k]) {
+				type = Content.itemList[k].type;
+			} else if (Content.weaponList[k]) {
+				type = Content.weaponList[k].type;
 			}
 			
 			var location;
@@ -437,7 +427,16 @@ var Room = {
 	
 	buy: function(buyBtn) {
 		var thing = $(buyBtn).attr('buildThing');
-		var good = Room.TradeGoods[thing];
+		var good = null;
+		if(Content.buildingList[thing]) {
+			good = Content.buildingList[thing];
+		} else if (Content.upgradeList[thing]) {
+			good = Content.upgradeList[thing];
+		} else if (Content.itemList[thing]) {
+			good = Content.itemList[thing];
+		} else if (Content.weaponList[thing]) {
+			good = Content.weaponList[thing];
+		}
 		var numThings = Engine.getStore(thing);
 		if(numThings < 0) numThings = 0;
 		if(good.maximum <= numThings) {
@@ -445,7 +444,7 @@ var Room = {
 		}
 		
 		var storeMod = {};
-		var cost = good.cost();
+		var cost = good.getCost();
 		for(var k in cost) {
 			var have = Engine.getStore(k)
 			if(have < cost[k]) {
@@ -474,8 +473,19 @@ var Room = {
 			Notifications.notify(Room, "builder just shivers");
 			return false;
 		}
-		var craftable = Room.Craftables[thing];
 		
+		//ugly, result of content separation
+		var craftable = null;
+		if(Content.buildingList[thing]) {
+			craftable = Content.buildingList[thing];
+		} else if (Content.upgradeList[thing]) {
+			craftable = Content.upgradeList[thing];
+		} else if (Content.itemList[thing]) {
+			craftable = Content.itemList[thing];
+		} else if (Content.weaponList[thing]) {
+			craftable = Content.weaponList[thing];
+		}
+			
 		var numThings = 0; 
 		switch(craftable.type) {
 		case 'good':
@@ -495,7 +505,7 @@ var Room = {
 		}
 		
 		var storeMod = {};
-		var cost = craftable.cost();
+		var cost = craftable.getCost();
 		for(var k in cost) {
 			var have = Engine.getStore(k)
 			if(have < cost[k]) {
@@ -536,9 +546,18 @@ var Room = {
 			return true;
 		}
 		if(State.room.builder < 4) return false;
-		var craftable = Room.Craftables[thing];
+		var craftable = null;
+		if(Content.buildingList[thing]) {
+			craftable = Content.buildingList[thing];
+		} else if (Content.upgradeList[thing]) {
+			craftable = Content.upgradeList[thing];
+		} else if (Content.itemList[thing]) {
+			craftable = Content.itemList[thing];
+		} else if (Content.weaponList[thing]) {
+			craftable = Content.weaponList[thing];
+		}
 		if(Room.needsWorkshop(craftable.type) && Outside.numBuilding('workshop') == 0) return false;
-		var cost = craftable.cost();
+		var cost = craftable.getCost();
 		
 		// Show buttons if we have at least 1/2 the wood, and all other components have been seen.
 		if(Engine.getStore('wood') < cost['wood'] * 0.5) {
@@ -591,15 +610,17 @@ var Room = {
 			bNeedsAppend = true;
 		}
 		
-		for(var k in Room.Craftables) {
-			craftable = Room.Craftables[k];
+		//rough edit and copy of code for content separation
+		//frankly, it is ugly and could really use clean up and refactoring
+		for(var k in Content.buildingList) {
+			craftable = Content.buildingList[k];
 			var max = Engine.num(k, craftable) + 1 > craftable.maximum;
 			if(craftable.button == null) {
 				if(Room.craftUnlocked(k)) {
 					var loc = Room.needsWorkshop(craftable.type) ? craftSection : buildSection;
 					craftable.button = new Button.Button({
 						id: 'build_' + k,
-						cost: craftable.cost(),
+						cost: craftable.getCost(),
 						text: k,
 						click: Room.build,
 						width: '80px',
@@ -610,7 +631,7 @@ var Room = {
 				// refresh the tooltip
 				var costTooltip = $('.tooltip', craftable.button);
 				costTooltip.empty();
-				var cost = craftable.cost();
+				var cost = craftable.getCost();
 				for(var k in cost) {
 					$("<div>").addClass('row_key').text(k).appendTo(costTooltip);
 					$("<div>").addClass('row_val').text(cost[k]).appendTo(costTooltip);
@@ -625,15 +646,50 @@ var Room = {
 				Button.setDisabled(craftable.button, false);
 			}
 		}
-		
-		for(var k in Room.TradeGoods) {
-			good = Room.TradeGoods[k];
+		// copy of above since craftables was broken into buildings and upgrades
+		for(var k in Content.upgradesList) {
+			craftable = Content.upgradesList[k];
+			var max = Engine.num(k, craftable) + 1 > craftable.maximum;
+			if(craftable.button == null) {
+				if(Room.craftUnlocked(k)) {
+					var loc = Room.needsWorkshop(craftable.type) ? craftSection : buildSection;
+					craftable.button = new Button.Button({
+						id: 'build_' + k,
+						cost: craftable.getCost(),
+						text: k,
+						click: Room.build,
+						width: '80px',
+						ttPos: loc.children().length > 10 ? 'top right' : 'bottom right'
+					}).css('opacity', 0).attr('buildThing', k).appendTo(loc).animate({opacity: 1}, 300, 'linear');
+				}
+			} else {
+				// refresh the tooltip
+				var costTooltip = $('.tooltip', craftable.button);
+				costTooltip.empty();
+				var cost = craftable.getCost();
+				for(var k in cost) {
+					$("<div>").addClass('row_key').text(k).appendTo(costTooltip);
+					$("<div>").addClass('row_val').text(cost[k]).appendTo(costTooltip);
+				}
+				if(max && !craftable.button.hasClass('disabled')) {
+					Notifications.notify(Room, craftable.maxMsg);
+				}
+			}
+			if(max) {
+				Button.setDisabled(craftable.button, true);
+			} else {
+				Button.setDisabled(craftable.button, false);
+			}
+		}
+		//Again ugly for the buy list just like the build list above
+		for(var k in Content.itemList) {
+			good = Content.itemList[k];
 			var max = Engine.num(k, good) + 1 > good.maximum;
 			if(good.button == null) {
 				if(Room.buyUnlocked(k)) {
 					good.button = new Button.Button({
 						id: 'build_' + k,
-						cost: good.cost(),
+						cost: good.getCost(),
 						text: k,
 						click: Room.buy,
 						width: '80px'
@@ -643,7 +699,40 @@ var Room = {
 				// refresh the tooltip
 				var costTooltip = $('.tooltip', good.button);
 				costTooltip.empty();
-				var cost = good.cost();
+				var cost = good.getCost();
+				for(var k in cost) {
+					$("<div>").addClass('row_key').text(k).appendTo(costTooltip);
+					$("<div>").addClass('row_val').text(cost[k]).appendTo(costTooltip);
+				}
+				if(max && !good.button.hasClass('disabled')) {
+					Notifications.notify(Room, good.maxMsg);
+				}
+			}
+			if(max) {
+				Button.setDisabled(good.button, true);
+			} else {
+				Button.setDisabled(good.button, false);
+			}
+		}
+		//another code copy paste
+		for(var k in Content.weaponList) {
+			good = Content.weaponList[k];
+			var max = Engine.num(k, good) + 1 > good.maximum;
+			if(good.button == null) {
+				if(Room.buyUnlocked(k)) {
+					good.button = new Button.Button({
+						id: 'build_' + k,
+						cost: good.getCost(),
+						text: k,
+						click: Room.buy,
+						width: '80px'
+					}).css('opacity', 0).attr('buildThing', k).appendTo(buySection).animate({opacity:1}, 300, 'linear');
+				}
+			} else {
+				// refresh the tooltip
+				var costTooltip = $('.tooltip', good.button);
+				costTooltip.empty();
+				var cost = good.getCost();
 				for(var k in cost) {
 					$("<div>").addClass('row_key').text(k).appendTo(costTooltip);
 					$("<div>").addClass('row_val').text(cost[k]).appendTo(costTooltip);

@@ -27,7 +27,7 @@ var Content = {
 	populateListFromStats: function (statList, objType, contentList) {
 		for(var entry in statList){
 			var tempObj = Object.create(objType);
-			jQuery.extend(tempObj, entry);
+			jQuery.extend(tempObj, statList[entry]);
 			Content.addContentListEntry(tempObj, contentList);
 		};
 	}

@@ -27,7 +27,7 @@ var Content = {
 	populateListFromStats: function (statList, objType, contentList) {
 		for(var entry in statList){
 			var tempObj = Object.create(objType);
-			jQuery.extend(tempObj, statList[entry]);
+			$.extend(tempObj, statList[entry]);
 			Content.addContentListEntry(tempObj, contentList);
 		};
 	}
@@ -44,48 +44,55 @@ Content.Thing = {
 	button: null,
 	type: 'thing',
 	availableMsg: null,
-	buildMsg: 'made a thing',
-	cost: [{wood: 10}],
-	getCost: function (index) {
-		if(!index) { index = 0 };
-		return this.cost[index];
-	}
+	createMsg: null,	
 };
 
 Content.Building = Object.create(Content.Thing);
-jQuery.extend(Content.Building, {
+$.extend(Content.Building, {
 	type: 'building',
-	availableMsg: 'new building available',
-	maximum: 1
+	availableMsg: null,
+	maxMsg: null,
+	maximum: 1,
+	req: null,
+	getReq: function (index) {
+		if(!index) { index = 0 };
+		return this.req[index];
+	}
 });
 
-Content.Upgrade = Object.create(Content.Thing);
-jQuery.extend(Content.Upgrade, {
+Content.Upgrade = Object.create(Content.Building);
+$.extend(Content.Upgrade, {
 	type: 'upgrade',
-	maximum: 1
 });
 
 Content.Item = Object.create(Content.Thing);
-jQuery.extend(Content.Item, {
+$.extend(Content.Item, {
 	type: 'item',
+	consumable: false,
+	material: false,
 	drops: {},
+	trade: [{wood: 10}],
+	getTrade: function (index) {
+		if(!index) { index = 0 };
+		return this.cost[index];
+	}
 });
 
-Content.Equipment = Object.create(Content.Thing);
-jQuery.extend(Content.Equipment, {
+Content.Equipment = Object.create(Content.Item);
+$.extend(Content.Equipment, {
 	type: 'equipment',
 	equipType: 'misc',
 	
 });
 
 Content.Weapon = Object.create(Content.Equipment);
-jQuery.extend(Content.Weapon, {
+$.extend(Content.Weapon, {
 	equipType: 'weapon',
 	weaponType: 'melee',
 	damage: 1,
 	cooldown: 1,
 	verb: 'hit',
-	useCost: {}
+	uses: {}
 });
 
 Content.Mob = {

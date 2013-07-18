@@ -5,15 +5,21 @@
 var Content = {
 	buildingList: {},
 	upgradeList: {},
+	allItemsList: {},
 	itemList: {},
 	weaponList: {},
 	mobList: {},
 	
 	//checks if object of the given name is already in the list
 	//if not, adds object to the list, else alerts name exists
-	addContentListEntry: function (newContent, whichList) {
+	addContentListEntry: function (newContent, whichList, noUpdate) {
 		if(!(newContent.name in whichList)) {
 			whichList[newContent.name] = newContent;
+			//check if the item should be added to allItemsList
+			//if this is skipped you MUST call Content.refreshAllItemsList() afterwards to keep the list correct
+			if(!noUpdate){
+				allItemsList[newContent.name] = newContent;
+			}
 		} else {
 			alert("The list already has an entry for \"" + newContent.name + "\".");
 		}
@@ -28,9 +34,17 @@ var Content = {
 		for(var entry in statList){
 			var tempObj = Object.create(objType);
 			$.extend(tempObj, statList[entry]);
-			Content.addContentListEntry(tempObj, contentList);
+			Content.addContentListEntry(tempObj, contentList, true);
 		};
+	},
+	
+	refreshAllItemsList: function () {
+		//clear the list
+		Content.allItemsList = {};
+		//then add everything back in fresh
+		$.extend(Content.allItemsList, Content.itemList, Content.weaponList);
 	}
+	
 };
 
 /**

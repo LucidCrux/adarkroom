@@ -15,7 +15,7 @@ var Content = {
 		if(!(newContent.name in whichList)) {
 			whichList[newContent.name] = newContent;
 		} else {
-			alert("The list already has an entry for \"" + newContent.name + "\".")
+			alert("The list already has an entry for \"" + newContent.name + "\".");
 		}
 		
 	},
@@ -39,7 +39,7 @@ var Content = {
  * prototyping inheritance.
  */
 
-Content.Thing = [
+Content.Thing = {
 	name: 'new thing',
 	button: null,
 	type: 'thing',
@@ -52,7 +52,7 @@ Content.Thing = [
 		};
 		return this.cost[index];
 	}
-];
+};
 
 Content.Building = Object.create(Content.Thing);
 jQuery.extend(Content.Building, {
@@ -90,7 +90,7 @@ jQuery.extend(Content.Weapon, {
 	useCost: {}
 });
 
-Content.Mob = [
+Content.Mob = {
 	name: 'mob',
 	char: 'm',
 	notification: 'a mob appears',
@@ -101,5 +101,5 @@ Content.Mob = [
 	attackDelay: 1,
 	health: 10,
 	terrain: null,
-	loot: {},
-];
+	loot: {}
+};

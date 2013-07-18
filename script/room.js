@@ -13,7 +13,8 @@ var Room = {
 	},
 	
 	TradeGoods: {
-	
+	},
+		
 	MiscItems: {
 	  'laser rifle': {
 	    type: 'weapon'
@@ -287,7 +288,7 @@ var Room = {
 			setTimeout(Room.unlockForest, Room._NEED_WOOD_DELAY);
 		} 
 		else if(State.room.builder < 3 && State.room.temperature.value >= Room.TempEnum.Warm.value) {
-			var msg;
+			var msg = '';
 			switch(State.room.builder) {
 			case 1:
 				msg = "the stranger shivers, and mumbles quietly. her words are unintelligible.";

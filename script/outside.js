@@ -140,7 +140,7 @@ var Outside = {
 				buildings: {},
 				population: 0,
 				workers: {}
-			}
+			};
 		}
 		
 		this.updateVillage();
@@ -481,7 +481,7 @@ var Outside = {
 			'sulphur mine': ['sulphur miner'],
 			'steelworks': ['steelworker'],
 			'armoury' : ['armourer']
-		}
+		};
 		
 		var jobs = jobMap[name];
 		var added = false;
@@ -490,7 +490,7 @@ var Outside = {
 				var job = jobs[i];
 				if(typeof State.outside.buildings[name] == 'number' && 
 						typeof State.outside.workers[job] != 'number') {
-					Engine.log('adding ' + job + ' to the workers list')
+					Engine.log('adding ' + job + ' to the workers list');
 					State.outside.workers[job] = 0;
 					added = true;
 				}
@@ -586,7 +586,7 @@ var Outside = {
 	},
 	
 	gatherWood: function() {
-		Notifications.notify(Outside, "dry brush and dead branches litter the forest floor")
+		Notifications.notify(Outside, "dry brush and dead branches litter the forest floor");
 		Engine.setStore('wood', Engine.getStore('wood') + (Outside.numBuilding('cart') > 0 ? 50 : 10));
 	},
 	
@@ -601,7 +601,7 @@ var Outside = {
 			for(var j in Outside.TrapDrops) {
 				var drop = Outside.TrapDrops[j];
 				if(roll < drop.rollUnder) {
-					var num = drops[drop.name]
+					var num = drops[drop.name];
 					if(typeof num == 'undefined') {
 						num = 0;
 						msg.push(drop.message);
@@ -627,4 +627,4 @@ var Outside = {
 		Notifications.notify(Outside, s);
 		Engine.addStores(drops);
 	}
-}
+};

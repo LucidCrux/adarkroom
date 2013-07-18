@@ -55,7 +55,7 @@ Content.buildingStatArray = [
 				wood: 200,
 				fur: 10,
 				meat: 5
-			}
+			};
 		}
 	},
 	{	name: 'trading post',
@@ -233,7 +233,7 @@ Content.upgradeStatArray = [
 			return {
 				'leather': 200,
 				'iron': 100
-			}
+			};
 		}
 	},
 	{	name: 's armour',
@@ -244,9 +244,9 @@ Content.upgradeStatArray = [
 			return {
 				'leather': 200,
 				'steel': 100
-			}
+			};
 		}
-	}
+	},
 	{	name: 'compass',
 		type: 'upgrade',
 		maximum: 1,
@@ -280,7 +280,7 @@ Content.itemStatArray = [
 			return {
 				'fur': 150,
 				'scales': 50
-			}
+			};
 		}
 	},
 	{	name: 'coal',
@@ -289,7 +289,7 @@ Content.itemStatArray = [
 			return {
 				'fur': 200,
 				'teeth': 50
-			}
+			};
 		}
 	},
 	{	name: 'steel',
@@ -299,7 +299,7 @@ Content.itemStatArray = [
 				'fur': 300,
 				'scales': 50,
 				'teeth': 50
-			}
+			};
 		}
 	},
 	{	name: 'alien alloy',
@@ -309,7 +309,7 @@ Content.itemStatArray = [
 				'fur': 1500,
 				'scales': 750,
 				'teeth': 300
-			}
+			};
 		}
 	},
 	{	name: 'medicine',
@@ -317,7 +317,7 @@ Content.itemStatArray = [
 		cost: function() {
 			return {
 				'scales': 50, 'teeth': 30
-			}
+			};
 		}
 	},
 	{	name: 'bullets',
@@ -325,7 +325,7 @@ Content.itemStatArray = [
 		cost: function() {
 			return {
 				'scales': 10
-			}
+			};
 		}
 	},
 	{	name: 'energy cell',
@@ -334,7 +334,7 @@ Content.itemStatArray = [
 			return {
 				'scales': 10,
 				'teeth': 10
-			}
+			};
 		}
 	},
 	{	name: 'torch',
@@ -415,7 +415,7 @@ Content.weaponStatArray = [
 			return {
 				'scales': 500,
 				'teeth': 250
-			}
+			};
 		}
 	},
 	//Ranged
@@ -432,7 +432,7 @@ Content.weaponStatArray = [
 				'wood': 200,
 				'steel': 50,
 				'sulphur': 50
-			}
+			};
 		}
 	},
 	{
@@ -454,7 +454,7 @@ Content.weaponStatArray = [
 			return {
 				'scales': 100,
 				'teeth': 50
-			}
+			};
 		}
 	},
 	{
@@ -467,7 +467,7 @@ Content.weaponStatArray = [
 		cost: function() {
 			return {
 				'teeth': 10
-			}
+			};
 		}
 	}
 ];

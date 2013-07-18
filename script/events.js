@@ -295,7 +295,7 @@ var Events = {
 				dmg = weapon.damage;
 				if(typeof dmg == 'number') {
 					if(weapon.type == 'unarmed' && Engine.hasPerk('boxer')) {
-						dmg *= 2
+						dmg *= 2;
 					}
 					if(weapon.type == 'unarmed' && Engine.hasPerk('martial artist')) {
 						dmg *= 3;
@@ -333,7 +333,7 @@ var Events = {
 		
 		fighter.stop(true, true).animate(start, Events._FIGHT_SPEED, function() {
 			var enemyHp = enemy.data('hp');
-			var msg;
+			var msg = '';
 			if(typeof dmg == 'number') {
 				if(dmg < 0) {
 					msg = 'miss';
@@ -378,7 +378,7 @@ var Events = {
 		$('<div>').css(start).addClass('bullet').text('o').appendTo('#description')
 				.animate(end, Events._FIGHT_SPEED * 2, 'linear', function() {
 			var enemyHp = enemy.data('hp');
-			var msg;
+			var msg = '';
 			if(typeof dmg == 'number') {
 				if(dmg < 0) {
 					msg = 'miss';
@@ -505,7 +505,7 @@ var Events = {
 	
 	dropStuff: function(e) {
 		e.stopPropagation();
-		var btn = $(this)
+		var btn = $(this);
 		var thing = btn.data('thing');
 		var num = btn.data('num');
 		var lootButtons = $('#lootButtons');
@@ -788,7 +788,7 @@ var Events = {
     
     scheduleNextEvent: function(scale) {
     	var nextEvent = Math.floor(Math.random()*(Events._EVENT_TIME_RANGE[1] - Events._EVENT_TIME_RANGE[0])) + Events._EVENT_TIME_RANGE[0];
-    	if(scale > 0) { nextEvent *= scale }
+    	if(scale > 0) { nextEvent *= scale; }
     	Engine.log('next event scheduled in ' + nextEvent + ' minutes');
     	Events._eventTimeout = setTimeout(Events.triggerEvent, nextEvent * 60 * 1000);
     },

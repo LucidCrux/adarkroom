@@ -293,4 +293,4 @@ var Path = {
 		$('#outerSlider').animate({left: '-700px'}, 300);
 		Engine.activeModule = World;
 	}
-}
+};

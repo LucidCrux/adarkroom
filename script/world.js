@@ -40,9 +40,6 @@ var World = {
 	WEST:  [-1,  0],
 	EAST:  [ 1,  0],
 	
-	Weapons: {
-	},
-	
 	name: 'World',
 	options: {}, // Nothing for now
 	init: function(options) {
@@ -803,7 +800,7 @@ var World = {
 	
 	leaveItAtHome: function(thing) {
 		 return thing != 'cured meat' && thing != 'bullets' && thing != 'energy cell'  && thing != 'charm' && thing != 'medicine'
-			 && typeof World.Weapons[thing] == 'undefined' && typeof Content.buildingList[thing] == 'undefined'
+			 && typeof Content.weaponList[thing] == 'undefined' && typeof Content.buildingList[thing] == 'undefined'
 			 && typeof Content.upgradeList[thing] == 'undefined';
 	},
 	

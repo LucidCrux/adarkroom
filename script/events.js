@@ -80,14 +80,14 @@ var Events = {
 		var btns = $('#buttons', Events.eventPanel());
 		
 		var numWeapons = 0;
-		for(var k in World.Weapons) {
-			var weapon = World.Weapons[k];
+		for(var k in Content.weaponList) {
+			var weapon = Content.weaponList[k];
 			if(typeof Path.outfit[k] == 'number' && Path.outfit[k] > 0) {
 				if(typeof weapon.damage != 'number' || weapon.damage == 0) {
 					// Weapons that deal no damage don't count
 					numWeapons--;
 				} else if(weapon.cost){
-					for(var c in weapon.cost) {
+					for(var c in weapon.getCost()) {
 						var num = weapon.cost[c];
 						if(typeof Path.outfit[c] != 'number' || Path.outfit[c] < num) {
 							// Can't use this weapon, so don't count it
@@ -154,9 +154,9 @@ var Events = {
 	},
 	
 	createAttackButton: function(weaponName) {
-		var weapon = World.Weapons[weaponName];
+		var weapon = Content.weaponList[weaponName];
 		var cd = weapon.cooldown;
-		if(weapon.type == 'unarmed') {
+		if(weapon.weaponType == 'unarmed') {
 			if(Engine.hasPerk('unarmed master')) {
 				cd /= 2;
 			}
@@ -241,8 +241,8 @@ var Events = {
 	useWeapon: function(btn) {
 		if(Events.activeEvent()) {
 			var weaponName = btn.attr('id').substring(7).replace('-', ' ');
-			var weapon = World.Weapons[weaponName];
-			if(weapon.type == 'unarmed') {
+			var weapon = Content.weaponList[weaponName];
+			if(weapon.weaponType == 'unarmed') {
 				if(!State.punches) State.punches = 0;
 				State.punches++;
 				if(State.punches == 50 && !Engine.hasPerk('boxer')) {
